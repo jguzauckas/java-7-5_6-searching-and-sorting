@@ -51,15 +51,17 @@ Note that the return type `int` did not change between the two examples, since w
 
 ## Sorting
 
-Sorting is mainly applicable to numerical values, though can be applied to numerical instance variables of objects (i.e., we can sort people by their age).
+Sorting is mainly applicable to numerical values, though can be applied to numerical instance variables of objects (i.e., we can sort people by their age or `String` objects by their length).
 
-We will be looking at two different algorithms for searching and sorting: **selection sort** and **insertion sort**.
+We will be looking at two different algorithms for sorting: **selection sort** and **insertion sort**.
 
 ### Selection Sort
 
 Selection sort is the simpler, yet less efficient of the two sorting algorithms we will look at.
 
-The premise of selection sort is that if we want to get numbers in order, we can keep finding the smallest number in the unsorted part of the list, and swap it with the front-most value, until we've moved all the way through the `ArrayList`.
+We divide the list into sorted and unsorted sections. At first, just the first element of the list is considered "sorted" and everything to the right of it is considered "unsorted".
+
+The premise of selection sort is that if we want to get numbers in order, we can keep finding the smallest number in the "unsorted" part of the list, and swap it with the front-most value of the "unsorted" list, making it the last value in the "sorted" part of the list, and making the "unsorted" part smaller, until we've moved all the way through the `ArrayList`.
 
 Here is a visual of what selection sort does:
 
@@ -138,7 +140,9 @@ Interestingly, finding the minimum value for this sorting process is a little bi
 
 Insertion sort is a bit more complex than selection sort, but comes with better efficiency (produces the same result faster).
 
-The premise of insertion sort is to take an element, and move it to the left until it is in the right position relative to the elements that are already sorted, then grab the next value and move it to the left, etc. The big difference from selection sort is that we are not swapping elements, we are just shifting which allows values to stay sorted even if they need to be outplaced by smaller values.
+We again divide the list into sorted and unsorted sections.
+
+This time though, we take the left-most value in the "unsorted" list and sort it into the "sorted" portion of the list by moving left until it belongs (it is less than or equal to the value to the right and greater than or equal to the value to the left).
 
 Here is a visual of what insertion sort does:
 
