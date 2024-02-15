@@ -8,33 +8,41 @@ public class Understanding {
     public static ArrayList<String> readIn(String filename) {
         BufferedReader in;
 		String strIn = "";
+        ArrayList<String> list = new ArrayList<String>();
 
 		try {
 			in = new BufferedReader(new FileReader(filename));
-			strIn = in.readLine();
+			while ((strIn = in.readLine()) != null) {
+				list.add(strIn);
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-        String[] strs = strIn.split(" ");
-        ArrayList<String> list = new ArrayList<String>();
-        for (String str : strs) {
-            if (!list.contains(str)) {
-                list.add(str);
-            }
-        }
+
         return list;
     }
 
-    public static void missingWords(ArrayList<String> story, ArrayList<String> vocab) {
+    public static void main (String[] args){
+        ArrayList<String> vocab = readIn("4. Understanding Check/vocab.txt");
         
+        System.out.print("Unsorted Sample: ");
+        for (int i = 0; i < vocab.size() / 1000; i++) {
+            System.out.print(vocab.get(i * 1000) + " ");
+        }
+        System.out.println(vocab.get(vocab.size() - 1));
+        
+        vocabInsertionSort(vocab);
+        
+        System.out.print("Sorted Sample: ");
+        for (int i = 0; i < vocab.size() / 1000; i++) {
+            System.out.print(vocab.get(i * 1000) + " ");
+        }
+        System.out.println(vocab.get(vocab.size() - 1));
+        
+        System.out.println("There are " + printLongestWords(vocab) + " longest words.");
     }
 
-    public static void main (String[] args){
-        ArrayList<String> storyList = readIn("4. Understanding Check/story.txt");
-        ArrayList<String> vocabList = readIn("4. Understanding Check/vocab.txt");
-        
-        missingWords(storyList, vocabList);
-    }
+    // Your methods go here!
 }

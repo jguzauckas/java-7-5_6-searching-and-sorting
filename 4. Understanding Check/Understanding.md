@@ -1,40 +1,11 @@
 # Understanding Check
 
-As children grow up, they learn more vocabulary and can read more advanced books. In this problem you have been given a sample of a story and the vocabulary of a child.
+You are provided the `String` `ArrayList` `vocab`, which contains over 4,000 of the most common English words ranked by frequency (how often they show up in various places like books).
 
-You are going to write the `missingWords` method that will evalute the story and the vocabulary and print out all of the words that are present in the story but are missing in the child's vocabulary.
+Create and write the method `vocabInsertionSort` that sorts the words based on their lengths from least to greatest. It does not `return` anything (as it edits the original `ArrayList`), and takes a `String` `ArrayList` as its parameter. You can choose to implement either sorting algorithm for this.
 
-The method has two parameters: `story` and `vocab`, which are `String` `ArrayList` objects that contain all of the unique words in the story, and all of the unique words in the child's vocabulary respectively. You need to write an algorithm that determines which words are present in the story, but are not present in the vocabulary. This method is `void`, as it should print out the result.
+Create and write the method `printLongestWords` that prints out all of the longest words in the provided `ArrayList`. This method is going to be called after the list is sorted, which means you can expect the list to already be sorted from least length to greatest length when writing it. It should identify the longest length word present, and then print out all words that match that length in the list (in no particular order). This method should return the number of words found at the longest length as an `int` value. It takes a `String` `ArrayList` as its parameter.
 
-This is the expected printed result when done correctly (order does not matter as long as all of the following words are present):
-
-```
-a
-wife
-build
-room
-dishes
-dark
-side
-tree
-not
-away
-orphan
-laugh
-know
-what
-north
-wail
-their
-up
-follow
-tipped
-rocked
-gently
-crawled
-closed
-```
-
-Hint: Go through each word in the story and check if it matches any of the words in the vocab. If it doesn't this is a new word and needs to be printed.
+Trial code is already written in the `main` method, so your results should be printed when run once you complete the methods. The trial code will print out a small sample of the list to help you determine if it is being sorted properly!
 
 Once you have gotten to just warnings, save the Java file and commit and push your changes via GitHub Desktop.
